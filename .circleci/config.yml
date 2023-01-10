@@ -75,7 +75,7 @@ jobs:
           paths: [backend/node_modules]
           key: backend-build
 
-test-frontend:
+  test-frontend:
     docker:
       # Docker image 
       - image: cimg/node:13.8.0
