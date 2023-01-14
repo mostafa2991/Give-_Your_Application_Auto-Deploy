@@ -351,7 +351,7 @@ jobs:
       - install_nodejs
       - restore_cache:
           keys: [backend-build]
-      # Add ssh keys with fingerprint
+      
       - add_ssh_keys:
           fingerprints: ["18:66:28:6b:f8:9d:9a:55:dd:29:6b:2f:ca:47:af:3f"]
       # attach workspace
