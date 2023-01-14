@@ -67,7 +67,7 @@ commands:
           when: on_fail
           command: |
             # Curl command here to see if there was a successful migration associated with the workflow id, store result in SUCCESS variable
-            SUCCESS=$(curl --insecure  https://kvdb.io/QNTmjadZ2tNm9QwSoLR9Ez/migration_<< parameters.Workflow_ID >>)
+            SUCCESS=$(curl --insecure  https://kvdb.io/B29uHav7nuMNMtY9D5pJdW/migration_<< parameters.Workflow_ID >>)
             if(( $SUCCESS==1 )); 
             then
               cd ~/project/backend
@@ -292,7 +292,7 @@ jobs:
             command: |
               if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
               then
-                curl https://kvdb.io/QNTmjadZ2tNm9QwSoLR9Ez/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
+                curl https://kvdb.io/B29uHav7nuMNMtY9D5pJdW/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
               else
                 echo "No migrations are pending" 
               fi
